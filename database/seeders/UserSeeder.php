@@ -46,11 +46,41 @@ class UserSeeder extends Seeder
                 'firstname' => 'Nita',
                 'lastname' => 'Ratnasari',
                 'telepon' => '085678901234',
-                'role' => 'user',
+                'role' => 'owner',
                 'created_at' => now(),
                 'updated_at' => now()
             ]
         ];
+
+        for ($i = 1; $i < 4; $i++) {
+            $users[] = [
+                'id' => 3 + $i,
+                'username' => fake()->username,
+                'email' => fake()->email,
+                'password' => bcrypt(fake()->password),
+                'firstname' => fake()->firstname,
+                'lastname' => fake()->lastname,
+                'telepon' => fake()->phoneNumber,
+                'role' => 'owner',
+                'created_at' => now(),
+                'updated_at' => now()
+            ];
+        }
+
+        for ($i = 1; $i < 5; $i++) {
+            $users[] = [
+                'id' => 6 + $i,
+                'username' => fake()->username,
+                'email' => fake()->email,
+                'password' => bcrypt(fake()->password),
+                'firstname' => fake()->firstname,
+                'lastname' => fake()->lastname,
+                'telepon' => fake()->phoneNumber,
+                'role' => 'user',
+                'created_at' => now(),
+                'updated_at' => now()
+            ];
+        }
 
         User::insert($users);
     }

@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(PropertiSeeder::class);
         $this->call(HargaPropertiSeeder::class);
-        $this->call(TransaksiSeeder::class);
         $this->call(PaymentSeeder::class);
+        $this->call(TransaksiSeeder::class);
         $this->call(PesananSeeder::class);
     }
 }

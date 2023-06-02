@@ -112,6 +112,17 @@ class HargaPropertiSeeder extends Seeder
             ]
         ];
 
+        for ($i = 1; $i < 39; $i++) {
+            $hargas[] = [
+                'id' => 12 + $i,
+                'id_properti' => fake()->numberBetween(5, 20),
+                'harga' => rand(10000, 50000000),
+                'durasi' => fake()->randomElement(['Harian', 'Mingguan', 'Bulanan', 'Tahunan']),
+                'created_at' => now(),
+                'updated_at' => now()
+            ];
+        }
+
         HargaProperti::insert($hargas);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Transaksi;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -28,5 +29,7 @@ class TransaksiSeeder extends Seeder
                 'updated_at' => now()
             ]
         ];
+
+        Transaksi::insert($transaksis);
     }
 }

@@ -60,6 +60,20 @@ class PropertiSeeder extends Seeder
             ]
         ];
 
+        for ($i = 1; $i < 17; $i++) {
+            $properties[] = [
+                'id' => 4 + $i,
+                'nama' => fake()->name,
+                'alamat' => fake()->address,
+                'deskripsi' => fake()->text,
+                'id_user' => fake()->numberBetween(2, 6),
+                'kategori' => fake()->randomElement(['Villa', 'Kontrakan', 'Kos', 'Apartemen']),
+                'status' => fake()->boolean,
+                'created_at' => now(),
+                'updated_at' => now()
+            ];
+        }
+
         Properti::insert($properties);
     }
 }

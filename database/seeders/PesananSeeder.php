@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Pesanan;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class PesananSeeder extends Seeder
 {
@@ -22,5 +23,7 @@ class PesananSeeder extends Seeder
                 'updated_at' => now()
             ]
         ];
+
+        Pesanan::insert($pesanans);
     }
 }
