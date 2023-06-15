@@ -91,9 +91,9 @@
                         </tr>
                         @foreach ($dataTransaksi as $item)
                         <tr>
-                            <td>{{ $item->properti->nama }}  </td>
-                            <td>{{ $item->properti->nama }}  </td>
-                            <td>{{ $item->pesanan->end_date }}  </td>
+                            <td>{{ $item->nama }}  </td>
+                            <td>{{ $item->firstname }}  </td>
+                            <td>{{ $item->end_date }}  </td>
                         </tr>
                         @endforeach
                     </table>
