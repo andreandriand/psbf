@@ -26,13 +26,13 @@
         <div class="row flex-nowrap">
             <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-2 bg-dark">
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <a href=" " class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                         <span class="fs-5 d-none d-sm-inline">Menu</span>
                     </a>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                         <li class="nav-item">
-                            <a href="sidebars.html" class="nav-link align-middle px-0">
-                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Peilik</span>
+                            <a href="{{ route('dashboard') }} " class="nav-link align-middle px-0">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">pemilik</span>
                             </a>
                         </li>
                             <a href="#" class="nav-link px-0 align-middle">
@@ -53,7 +53,7 @@
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                         Total Pengeluaran</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. 500,000</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">Rp. {{ $totalPengeluaran }} </div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -70,7 +70,7 @@
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                         Jumlah Transaksi </div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $pesanan }} </div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -89,11 +89,13 @@
                             <th>Pemilik</th>
                             <th>Tanggal selesai sewa</th>
                         </tr>
+                        @foreach ($dataTransaksi as $item)
                         <tr>
-                            <td>Kos 1</td>
-                            <td>Abdul</td>
-                            <td>19 Juni 2023</td>
+                            <td>{{ $item->properti->nama }}  </td>
+                            <td>{{ $item->properti->nama }}  </td>
+                            <td>{{ $item->pesanan->end_date }}  </td>
                         </tr>
+                        @endforeach
                     </table>
                 </div>
             </div>
